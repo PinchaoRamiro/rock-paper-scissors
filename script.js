@@ -2,7 +2,6 @@
 class GameObject {
     constructor() {
         this.totalGames = 0; // Variable para almacenar el número total de juegos
-        this.currentGame = 0; // Variable para almacenar el juego actual
     }
 
     // Método para verificar el resultado del juego
@@ -65,16 +64,6 @@ class GameObject {
         updatePoints();
     }
 }
-
-// Variables globales
-const keyToChoiceMap = {
-    'a': 'rock',
-    's': 'paper',
-    'd': 'scissors',
-    'k': 'rock',
-    'l': 'paper',
-    'ñ': 'scissors'
-};
 
 let player1Choice = null;
 let player2Choice = null;
@@ -218,8 +207,3 @@ changeModeBtn.addEventListener("click", function() {
     changeModeBtn.textContent = contraComputadora ? "Change to player" : "Change to computer";
     resetChoices();
 });
-
-// Mostrar instrucciones en consola
-console.log("Player 1: Use 'a', 's', 'd'");
-console.log("Player 2: Use 'k', 'l', 'ñ'");
-console.log("Let the game begin!");
