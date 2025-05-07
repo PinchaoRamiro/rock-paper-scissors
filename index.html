@@ -1,62 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Rock, Paper, Scissors</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Rocke, paper, scissors </title>
+  <link rel="stylesheet" href="/styles/styles.css" />
 </head>
 <body>
-  <section class="notification" style="display: none;">
-      <div class="notification-container">
-          <div class="notification-header">
-              <label></label>
-          </div>
-          <div class="notification-body">
-              <label></label>
-          </div>
-          <div class="notification-footer"></div>
+  <section class="notification" role="alert" aria-live="assertive">
+    <div class="notification-container">
+      <div class="notification-header">
+        <label></label>
       </div>
+      <div class="notification-body">
+        <label></label>
+      </div>
+    </div>
   </section>
+
   <header class="header">
-      <div class="container">
-          <h1 class="header-title">Rock, Paper, Scissors</h1>
-          <input type="number" id="intentos" placeholder="Ingresa los intentos">
-          <strong><span id="intentos-restantes">Intentos restantes: 0</span></strong>
-          <div id="mensaje" class="mensaje"></div> <!-- Contenedor de mensajes -->
-      </div>
+    <div class="container">
+      <h1 class="header-title">Rock, Paper, Scissors</h1>
+      <label for="intentos" class="visually-hidden">Numero de intentos</label>
+      <input type="number" id="intentos" placeholder="Número de intentos" min="1" />
+      <strong><span id="intentos-restantes">Intentos restantes </span></strong>
+      <div id="message" class="message"></div>
+    </div>
   </header>
+
   <main>
-      <div class="main-container">
-          <div class="options-container">
-              <section class="optionCont">
-                  <button class="option" id="rock">
-                      <img class="option-image" src="rock-emoji.png" alt="Rock">
-                  </button>
-              </section>
-              <section class="optionCont">
-                  <button class="option" id="paper">
-                      <img class="option-image" src="paper-emoji.png" alt="Paper">
-                  </button>
-              </section>
-              <section class="optionCont">
-                  <button class="option" id="scissors">
-                      <img class="option-image" src="scissors-emoji.png" alt="Scissors">
-                  </button>
-              </section>
-          </div>
-          <footer>
-            <div class="points-container">
-                <strong><span id="player1-points">Player 1 Points: 0</span></strong>
-                <strong><span id="player2-points">Player 2 Points: 0</span></strong>
-            </div>
-            <button class="button-mode">Change to player</button>
-          </footer>
-          <div>
-            <button class="button-mode"><a class="a-button" href="./index.html">Reiniciar</a></button>
-          </div>
+    <div class="main-container">
+      <div class="options-container">
+        <section class="optionCont">
+          <button class="option" id="rock" aria-label="Piedra">
+            <img class="option-image" src="/assets/rock-emoji.png" alt="Mano en forma de piedra" />
+          </button>
+        </section>
+        <section class="optionCont">
+          <button class="option" id="paper" aria-label="Papel">
+            <img class="option-image" src="/assets/paper-emoji.png" alt="Mano en forma de papel" />
+          </button>
+        </section>
+        <section class="optionCont">
+          <button class="option" id="scissors" aria-label="Tijeras">
+            <img class="option-image" src="/assets/scissors-emoji.png" alt="Mano en forma de tijeras" />
+          </button>
+        </section>
       </div>
+
+      <footer>
+        <div class="points-container">
+          <strong><span id="player1-points">Puntos del jugador 1: </span></strong>
+          <strong><span id="player2-points">Puntos del jugador 2: </span></strong>
+        </div>
+        <button class="button-mode" aria-pressed="true">Cambiar a jugador versus jugador</button>
+      </footer>
+
+      <div>
+        <a href="./index.html" class="button-mode a-button">Reiniciar</a>
+      </div>
+    </div>
   </main>
-  <script src="script.js"></script>
+
+  <script type="module" src="./src/main.js"></script>
+
 </body>
 </html>
