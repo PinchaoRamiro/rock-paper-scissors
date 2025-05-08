@@ -80,20 +80,20 @@ header {
   background-color: #00509e;
 }
 
+/* Estilos para la notificación */
 .notification {
-  display: none;
-  background-color: #f0f0f0;
-  padding: 1rem;
-  border: 2px solid #ccc;
-  border-radius: 10px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: #07da00;
+  border: 2px solid #7dff9d;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
   z-index: 1000;
-  transition: opacity 0.3s ease, transform 0.3s ease;
   opacity: 0;
-  pointer-events: none;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .notification.show {
@@ -101,14 +101,25 @@ header {
   pointer-events: all;
 }
 
-.notification-header, .notification-body, .notification-footer {
-  margin-bottom: 1rem;
+.notification-content {
+  text-align: center;
 }
 
-.notification img {
-  width: 50px;
-  height: 50px;
+.notification-content h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #000000;
 }
+
+.notification-content p {
+  font-size: 1rem;
+  color: #000000;
+}
+
+.hidden {
+  display: none;
+}
+
 
 .a-button {
   text-decoration: none;
@@ -124,8 +135,7 @@ header {
 }
 
 .option:hover {
-  animation: shake 0.5s;
-  animation-iteration-count: 1;
+  animation: shake 0.5s infinite; 
 }
 
 .option-image {
@@ -155,7 +165,7 @@ header {
 }
 
 #mensaje {
-  font-size: 1rem;
+  font-size: 1.5rem;
   padding: 0.5rem;
   margin-top: 0.5rem;
 }
@@ -179,9 +189,9 @@ header {
 }
 
 @keyframes shake {
-  0% { transform: rotate(0deg); }
+  0% { transform: rotate(10deg); }
   25% { transform: rotate(20deg); }
   50% { transform: rotate(-20deg); }
   75% { transform: rotate(20deg); }
-  100% { transform: rotate(0deg); }
+  100% { transform: rotate(10deg); }
 }

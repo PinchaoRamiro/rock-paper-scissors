@@ -77,6 +77,8 @@ export class GameController {
         else if (this.player2Score > this.player1Score) winner = 2;
         else winner = 0;
 
+        this.resetChoices();
+
         UIManager.showFinalResult(winner);
     }
 

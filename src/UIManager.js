@@ -1,40 +1,60 @@
 // UIManager.js
 export class UIManager {
-  static showNotification(resultText, detailText) {
-      const notif = document.querySelector(".notification");
-      const header = document.querySelector(".notification-header label");
-      const body = document.querySelector(".notification-body label");
+  static showNotification(title, body) {
+    const notification = document.getElementById("notification");
+    const notificationTitle = document.getElementById("notification-title");
+    const notificationBody = document.getElementById("notification-body");
 
-      header.textContent = resultText;
-      body.textContent = detailText;
-      notif.style.display = "block";
-      setTimeout(() => notif.style.display = "none", 3000);
+    notificationTitle.textContent = title;
+    notificationBody.textContent = body;
+
+    notification.classList.remove("hidden");
+    notification.classList.add("show");
+
+    if(title === "Resultado"){
+        notification.style = "background-color: blue"
+        notificationTitle.style = "color: red"
+        notificationBody.style = "color: red"
+    }
+
+    setTimeout(() => {
+        notification.classList.remove("show");
+        notification.classList.add("hidden");
+    }, 3000);
   }
 
+
   static updateScores(p1, p2) {
-      document.getElementById("player1-points").textContent += `${p1}`;
-      document.getElementById("player2-points").textContent += `${p2}`;
+      document.getElementById("PointsP1").textContent = `${p1}`;
+      document.getElementById("PointsP2").textContent = `${p2}`;
   }
 
   static updateAttempts(attempts) {
-      document.getElementById("intentos-restantes").textContent += `= ${attempts}`;
+      document.getElementById("num-intentos-restantes").textContent = `: ${attempts}`;
   }
 
   static showFinalResult(winner) {
-      const msg = document.getElementById("message");
-      if (winner === 0) {
-          msg.textContent = "Es un empate señores";
-      } else {
-          msg.textContent = `El ganador es Player ${winner}`;
-      }
-      msg.style.color = 'red';
+    let message;
+    const msg = document.getElementById("message");
+
+    if (winner === 0) {
+        message = "Es un empate señores";
+        UIManager.showNotification("Resultado", message);
+    } else {
+        message = `El ganador es Player ${winner}`;
+        UIManager.showNotification("Resultado", message);
+    }
+    UIManager.showNotification("Resultado", message);
+
+    msg.textContent = message;
+    msg.style.color = 'blue';
   }
+
 
   static showChoice(player, choice) {
       const msg = document.getElementById("message");
       msg.textContent = `${player} chose ${choice}`;
       msg.style.color = 'red';
-      msg.style.backgroundColor = '#02399f';
   }
 
   static showInputMessage(text, isValid) {
