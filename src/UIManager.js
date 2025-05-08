@@ -12,9 +12,7 @@ export class UIManager {
     notification.classList.add("show");
 
     if(title === "Resultado"){
-        notification.style = "background-color: blue"
-        notificationTitle.style = "color: red"
-        notificationBody.style = "color: red"
+        notification.style = "background-color: #5598db "
     }
 
     setTimeout(() => {
@@ -54,7 +52,7 @@ export class UIManager {
   static showChoice(player, choice) {
       const msg = document.getElementById("message");
       msg.textContent = `${player} chose ${choice}`;
-      msg.style.color = 'red';
+      msg.style.fontSize = "1.1rem"
   }
 
   static showInputMessage(text, isValid) {

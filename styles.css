@@ -25,7 +25,7 @@ main {
 }
 
 header {
-  background-color: rgb(59, 252, 0);
+  background-color: rgba(31, 40, 173, 0.849);
 }
 
 .container {
@@ -49,7 +49,7 @@ header {
 .header-title {
   font-size: 2rem;
   font-weight: bold;
-  color: #ff0000e3;
+  color: #000000;
 }
 
 .header-points, .button-mode {
@@ -86,7 +86,7 @@ header {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #07da00;
+  background-color:#00509e;
   border: 2px solid #7dff9d;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -130,7 +130,7 @@ header {
   background-color: white;
   padding: 2rem;
   border-radius: 100%;
-  border-color: orange;
+  border-color: rgb(140, 148, 255);
   cursor: pointer;
 }
 
@@ -157,11 +157,17 @@ header {
 
 #intentos {
   border: 2px solid #003366;
+  background-color:#2a6aaa57;
+  color: #000000;
   font-size: 1rem;
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
   width: auto;
   max-width: 200px;
+}
+
+#intentos::after{
+  border: #7dff9d;
 }
 
 #mensaje {
