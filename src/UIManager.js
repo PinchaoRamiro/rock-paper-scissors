@@ -45,7 +45,7 @@ export class UIManager {
     UIManager.showNotification("Resultado", message);
 
     msg.textContent = message;
-    msg.style.color = 'blue';
+    msg.style.color = 'red';
   }
 
 
